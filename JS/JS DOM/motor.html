@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valtech Motor Mentence</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="motor.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="navBar">
+      <span class="Name_render">Set</span>
+      <span>Date : </span>
+      <input type="text" />
+      <div class="content_color">color</div>
+      <button class="login_bottom">Login</button>
+    </div>
+
+    <div class="main">
+      <div class="m">
+        <div class="top_img">
+          <img class="valtechimg" src="valtechimg.png" alt="Valtech Logo" />
+        </div>
+
+        <div class="DashBord">
+          <i class="fa-solid fa-gauge"></i
+          ><a href="" onload="generateTable()">DashBord</a>
+        </div>
+        <div class="DashBord">
+          <i class="fa-solid fa-lightbulb"></i><a href="#">Mentence</a>
+        </div>
+        <div class="DashBord">
+          <i class="fa-solid fa-circle-xmark"></i><a href="#">Pending</a>
+        </div>
+        <div class="DashBord_bottom">
+          <i class="fa-solid fa-gears"></i><a href="#">Setting</a>
+        </div>
+      </div>
+    </div>
+    <div class="navBar_bottom">
+      <img class="valtechimg_bottom" src="valtechimg.png" alt="Valtech Logo" />
+    </div>
+    <!-- <div class="MotorAlarmBord">
+      <table>
+        <tr>
+          <th>Motor SL No</th>
+          <th>Color</th>
+          <th>Pending Day</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+      </table>
+    </div> -->
+    <!-- <div class="MotorAlarmBord1">
+      <table>
+        <tr>
+          <th>Motor SL No</th>
+          <th>Color</th>
+          <th>Pending Day</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><div class="Motor_Color"></div></td>
+          <td>0</td>
+        </tr>
+      </table>
+    </div> -->
+    <!-- <input
+      type="button"
+      value="Generate a table"
+      onclick="generateTable()"
+      class="newTable"
+    /> -->
+    <script src="motor.js"></script>
+  </body>
+</html>
