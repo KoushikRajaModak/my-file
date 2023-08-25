@@ -26,3 +26,7 @@ body {
 #description {
   background-color: antiquewhite;
 }
+.Rowselect {
+  position: absolute;
+  left: 25vw;
+}
