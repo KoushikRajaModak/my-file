@@ -8,7 +8,7 @@ const port = 3000;
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`); //it is use for lisen the  web site request
-});
+})
 
 // app.use((req, res) => {
 //   // res.send("your request responce");
