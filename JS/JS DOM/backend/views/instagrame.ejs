@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>instagrame</title>
-  </head>
-  <body>
-    <h1><%= data %></h1>
+<%- include("include/common.ejs") %>
+<!-- this is < % - get html but < % = return string  and dont use / to stsrt file name  -->
+<% for(let i=0;i<3;i++){ %>
+  <h1>hello let i = <%= i %></h1>
+  <% } %>
+  <h1>Your Name : <%= data.name %></h1>
+  <button>followers</button>  <%= data.followers %>
+  <button>following</button>  <%= data.following %>
+  <% for(let post of data.posts){ %>
+    <img src="<%=post.image%>" alt="">
+    <button>likes</button>  <%= post.likes %>
+  <button>comments</button>  <%= post.comments %>
+    <% } %>
+  <script src="/JS/ejs.js"></script>
+  <%- include("include/footer.ejs") %>
   </body>
 </html>
