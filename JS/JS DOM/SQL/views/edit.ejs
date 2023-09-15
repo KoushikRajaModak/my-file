@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+  </head>
+  <body>
+    <h1>Edit user Details :<%=users.email%></h1>
+    <form action="/user" method="post">
+      <textarea
+        name="username"
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="enter new username"
+      ></textarea>
+      <input type="password" placeholder="enter password" />
+      <button>submit</button>
+    </form>
+  </body>
+</html>
