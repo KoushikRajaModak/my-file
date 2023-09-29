@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>Edit user Details :<%=users.email%></h1>
-    <form action="/user" method="post">
+    <form action="/user/<%=users.email%>" method="post">
       <textarea
         name="username"
         id=""
@@ -15,7 +15,7 @@
         rows="10"
         placeholder="enter new username"
       ></textarea>
-      <input type="password" placeholder="enter password" />
+      <input name="password" type="password" placeholder="enter password" />
       <button>submit</button>
     </form>
   </body>

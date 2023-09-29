@@ -10,6 +10,8 @@ const path = require("path");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 // let createRandomUser = () => {
 //   return {
 //     userId: faker.datatype.uuid(),
@@ -107,23 +109,30 @@ app.get("/user/:id/edit", (req, res) => {
     res.send(err);
   }
 });
-app.post("/user", (req, res) => {
-  //let { email } = req.params;
-  let { password } = req.body;
-  //let q = ` select * from user where id='${email}';`;
-  // try {
-  //   connection.query(q, (err, results) => {
-  //     if (err) throw err;
-  //     let users = results[0];
-  // if (password != users.password) {
-  //   res.send("Wrong PassWord");
-  // }
-  res.send(password);
-  //   });
-  // } catch (err) {
-  //   console.log(err);
-  //   res.send(err);
-  // }
+app.post("/user/:email", (req, res) => {
+  let { email } = req.params;
+  let { username, password } = req.body;
+  let q = ` select * from user where email='${email}';`;
+  // console.log(req.body);
+  try {
+    connection.query(q, (err, results) => {
+      if (err) throw err;
+      let users = results[0];
+      if (password != users.password) {
+        res.send("Wrong password");
+      } else {
+        let q2 = ` Update user  SET username='${username}' where email='${email}';`;
+        connection.query(q2, (err, results) => {
+          if (err) throw err;
+          res.redirect("/user");
+        });
+      }
+    });
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
+  //res.redirect("/");
 });
 app.listen("8080", () => {
   console.log("app is listen 8080");
