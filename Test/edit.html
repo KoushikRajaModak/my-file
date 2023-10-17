@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .xcontainer14 {
+        width: 45%;
+        margin-left: 0.5%;
+        border-radius: 7px;
+        background-image: linear-gradient(to top, #000000, #7c7cca);
+        box-shadow: 5px 10px 18px #10164a;
+        display: flex;
+        flex-direction: column;
+      }
+      .xcontainer141 {
+        width: 100%;
+        height: 10%;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        color: cornsilk;
+        text-align: center;
+      }
+      .xcontainer142 {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        padding-left: 0%;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      .temp {
+        height: 90%;
+        width: 7%;
+        background-color: white;
+        margin: 2% 0 0 1%;
+        border: 2px solid black;
+        border-radius: 5px;
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .tempBox {
+        height: 86%;
+        width: 80%;
+        margin-left: 6%;
+        border: 2px solid black;
+        border-radius: 5px;
+      }
+      .ycontainer3 {
+        height: 42%;
+        border-radius: 7px;
+        display: flex;
+        /* border: 2px rebeccapurple solid;*/
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ycontainer3">
+      <div class="xcontainer14">
+        <div class="xcontainer141">Heating Status of Ovens</div>
+        <div class="xcontainer142">
+          <div class="temp">
+            701
+            <div class="tempBox temp1"></div>
+          </div>
+          <div class="temp">
+            702
+            <div class="tempBox temp2"></div>
+          </div>
+          <div class="temp">
+            703
+            <div class="tempBox temp3"></div>
+          </div>
+          <div class="temp">
+            704
+            <div class="tempBox temp4"></div>
+          </div>
+          <div class="temp">
+            705
+            <div class="tempBox temp5"></div>
+          </div>
+          <div class="temp">
+            706
+            <div class="tempBox temp6"></div>
+          </div>
+          <div class="temp">
+            707
+            <div class="tempBox temp7"></div>
+          </div>
+          <div class="temp">
+            708
+            <div class="tempBox temp8"></div>
+          </div>
+          <div class="temp">
+            709
+            <div class="tempBox temp9"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var s_701 = 25;
+      var s_702 = 75;
+      var s_703 = 25;
+      var s_704 = 50;
+      var s_705 = 25;
+      var s_706 = 100;
+      var s_707 = 25;
+      var s_708 = 100;
+      var s_709 = 75;
+      const expr = [
+        s_701,
+        s_702,
+        s_703,
+        s_704,
+        s_705,
+        s_706,
+        s_707,
+        s_708,
+        s_709,
+      ];
+      for (let i = 0, j = 1; i < 9; i++, j++) {
+        switch (expr[i]) {
+          case 25:
+            document.querySelector(`.temp${j}`).style.backgroundImage =
+              "linear-gradient(to top, #ff0000, #ff8800, #ff0000)";
+            break;
+          case 50:
+            console.log(i);
+            document.querySelector(`.temp${j}`).style.backgroundImage =
+              "linear-gradient(to top, #ff0000, #ffe400c4, #ff0000)";
+            break;
+          case 75:
+            document.querySelector(`.temp${j}`).style.backgroundImage =
+              "linear-gradient(to top, #ff000099, #ffe400d1, #ff00007d)";
+            break;
+          case 100:
+            document.querySelector(`.temp${j}`).style.backgroundImage =
+              "linear-gradient(to top, #ff00005c, #e6e745ab, #ff00005c)";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

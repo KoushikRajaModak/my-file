@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pie Chart with Threshold</title>
+    <!-- Include Highcharts library -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  </head>
+  <body>
+    <div id="myChart"></div>
+    <script>
+      // Your data
+      var data = [
+        { name: "Category 1", y: 300 },
+        { name: "Category 2", y: 600 },
+        { name: "Category 3", y: 800 },
+        { name: "Category 4", y: 1200 },
+      ];
+
+      // Set the threshold value
+      var threshold = 1000;
+
+      // Create the chart
+      Highcharts.chart("myChart", {
+        chart: {
+          type: "pie",
+        },
+        title: {
+          text: "Pie Chart with Threshold",
+        },
+        plotOptions: {
+          pie: {
+            dataLabels: {
+              enabled: true,
+              formatter: function () {
+                // Check if the data point's value is above the threshold
+                if (this.y > threshold) {
+                  // Display the data label
+                  return this.key + ": " + this.y;
+                } else {
+                  // Return an empty string to hide the data label
+                  return "";
+                }
+              },
+              distance: -30, // Adjust the distance of the data label from the center
+              style: {
+                fontWeight: "bold",
+              },
+            },
+          },
+        },
+        series: [
+          {
+            name: "Data",
+            data: data,
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

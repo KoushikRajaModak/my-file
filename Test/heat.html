@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temp</title>
+    <style>
+      .MainContainer {
+        height: 50vh;
+        width: 50vw;
+        background-color: white;
+        padding-top: 70px;
+        display: flex;
+      }
+      .temp {
+        height: 41vh;
+        width: 5%;
+        background-color: white;
+        margin: 4px;
+        border: 2px solid black;
+        border-radius: 5px;
+      }
+      .textContainer {
+        height: 5%;
+        width: 50vw;
+        padding-top: 8px;
+        display: flex;
+        position: absolute;
+        top: 8%;
+        margin-left: 11px;
+      }
+      .text {
+        height: 5%;
+        width: 3vw;
+        margin: 0px 3px;
+        padding: 0px;
+        /* text-align: center; */
+        font-size: 17px;
+      }
+      .tempBox {
+        height: 37vh;
+        width: 25%;
+        border: 5px solid black;
+        border-radius: 5px;
+        padding: 6px;
+        margin: 2px;
+      }
+
+      /* Temputure scale start */
+      
+      .tempCatalog{
+        position: absolute;
+    top: 10vh;
+    left: 78vw;
+        height: 36vh;
+    width: 2%;
+    background-color: white;
+    margin: 4px;
+    border: 2px solid black;
+    border-radius: 33px;    transform: rotate(180deg);
+      }
+      .tempCatalogBox1{
+    height: 3vh;
+    width: 101%;
+    border-radius: 19px 19px 0px 0px;
+    background-color: #feef4e;
+      }
+    
+      .tempCatalogBox2,.tempCatalogBox3,.tempCatalogBox4,.tempCatalogBox5,.tempCatalogBox6,.tempCatalogBox7,.tempCatalogBox8,.tempCatalogBox9,.tempCatalogBox10,.tempCatalogBox11{
+    height: 3vh;
+    width: 101%;
+  background-color:#fda774;
+      }
+      .tempCatalogBox12{
+        height: 3vh;
+    width: 101%;
+    border-radius: 0px 0px 19px 19px;
+    background-color: #ff0000b5;
+      }
+      .tempCatalogBoxLine{
+        height: 50px;
+      width: 2px;
+      background-color: black;
+      transform: rotate(90deg);
+      position: absolute;
+      top: 42vh;
+      font-size: 22px;
+      left: 79.5vw;
+      }
+      .tempCatalogBoxDeg{
+        position: absolute;
+    top: 40.5vh;
+    font-size: 22px;
+    left: 81.3vw;
+      }
+          /* Temputure scale end */
+    </style>
+  </head>
+  <body>
+    <div class="MainContainer">
+      <div class="textContainer">
+        <div class="text textTemp1">1</div>
+        <div class="text textTemp2">2</div>
+        <div class="text textTemp3">3</div>
+        <div class="text textTemp4">4</div>
+        <div class="text textTemp5">5</div>
+        <div class="text textTemp6">6</div>
+        <div class="text textTemp7">7</div>
+        <div class="text textTemp8">8</div>
+      </div>
+      <div class="temp"><div class="tempBox temp1"></div></div>
+      <div class="temp"><div class="tempBox temp2"></div></div>
+      <div class="temp"><div class="tempBox temp3"></div></div>
+      <div class="temp"><div class="tempBox temp4"></div></div>
+      <div class="temp"><div class="tempBox temp5"></div></div>
+      <div class="temp"><div class="tempBox temp6"></div></div>
+      <div class="temp"><div class="tempBox temp7"></div></div>
+      <div class="temp"><div class="tempBox temp8"></div></div>
+     
+    </div>
+    <p class="TextHot" style="position: absolute;top: 8vh;font-size:22px;left: 71vw;">Hot</p>
+    <p  class="arrowFont" style="font-size:25px;position:absolute;top: 10vh;left: 71vw;">&#129033;</p>
+    <div class="arrowLeg" style="font-size: 40px;position: absolute; top: 18vh;left: 71.75vw;background-color: black;width: 3px;height: 150px;"></div>
+    <p class="TextHot" style="position: absolute;top: 38vh;font-size:22px;left: 69vw;">Normal<br> Temperature</p>
+    <p class="TextHot" style="position: absolute;top:1vh;font-size:22px;left: 75vw;">Celsius Scale</p>
+    <p class="tempCatalogBoxDeg" >0&#8451;</p>
+    <p class="tempCatalogBoxDeg" style="top: 32.5vh;">300&#8451;</p>
+    <p class="tempCatalogBoxDeg" style="top: 23.5vh;">600&#8451;</p>
+    <p class="tempCatalogBoxDeg" style="top: 14.5vh;">900&#8451;</p>
+    <p class="tempCatalogBoxDeg" style="top: 6.5vh;">1200&#8451;</p>
+    <div class="tempCatalogBoxLine"></div>
+    <div class="tempCatalogBoxLine" style="top: 34vh;"></div>
+    <div class="tempCatalogBoxLine" style="top: 25vh;"></div>
+    <div class="tempCatalogBoxLine" style="top: 16.5vh;"></div>
+    <div class="tempCatalogBoxLine" style="top: 8vh;"></div>
+
+    <div class="tempCatalog"><div class="tempCatalogBox1" style="background-color: rgb(201, 154, 154);"></div><div class="tempCatalogBox2" style="background-color: rgb(124, 34, 34);"></div><div class="tempCatalogBox3" style="background-color: rgb(90, 85, 85);"></div><div class="tempCatalogBox4" style="background-color: rgb(159, 170, 55);"></div><div class="tempCatalogBox5" style="background-color: rgb(90, 146, 76);"></div><div class="tempCatalogBox6" style="background-color: rgb(89, 55, 170);"></div><div class="tempCatalogBox7" style="background-color: rgb(48, 206, 127);"></div><div class="tempCatalogBox8" style="background-color: rgb(214, 17, 17);"></div><div class="tempCatalogBox9" style="background-color: rgb(230, 225, 225);"></div><div class="tempCatalogBox10" style="background-color: rgb(22, 2, 2);"></div><div class="tempCatalogBox11" style="background-color: rgb(12, 194, 37);"></div><div class="tempCatalogBox12" style="background-color: rgb(56, 18, 18);"></div></div>
+    <script>
+      var s_701 = 51;
+      var s_702 = 5;
+      var s_703 = 27;
+      var s_704 = 25;
+      var s_705 = 25;
+      var s_706 = 58;
+      var s_707 = 254;
+      var s_708 = 75;
+      s_708<=25?25:s_708<=50?50:s_708<=75?75:100
+      const expr = [s_701<=25?25:s_701<=50?50:s_701<=75?75:100, s_702<=25?25:s_702<=50?50:s_702<=75?75:100,  s_703<=25?25:s_703<=50?50:s_703<=75?75:100,s_704<=25?25:s_704<=50?50:s_704<=75?75:100,  s_705<=25?25:s_705<=50?50:s_705<=75?75:100,   s_706<=25?25:s_706<=50?50:s_706<=75?75:100, s_707<=25?25:s_707<=50?50:s_707<=75?75:100, s_708<=25?25:s_708<=50?50:s_708<=75?75:100];
+      for (let i = 0, j = 1; i < 8; i++, j++) {
+        switch (expr[i]) {
+          case 25:
+            document.querySelector(`.temp${j}`).style.background = "#feef4e";
+            break;
+          case 50:
+            console.log(i);
+            document.querySelector(`.temp${j}`).style.background = "#fcbc3f";
+            break;
+          case 75:
+            document.querySelector(`.temp${j}`).style.background = "#fda774";
+            break;
+          case 100:
+            document.querySelector(`.temp${j}`).style.background = "#ff0000b5";
+            break;
+        }
+      }
+    </script
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Line Graph with Threshold</title>
+    <!-- Include Highcharts library -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- <script src=" https://code.highcharts.com/modules/annotations.js "></script> -->
+  </head>
+  <body>
+    <div id="myChart"></div>
+    <script>
+      // Your data
+      var categories = [
+        "2001",
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+      ];
+      var data = [
+        814, 512, 310, 308, 304, 502, 500, 535, 425, 1019, 711, 1570, 754, 598,
+        590, 1100, 759, 2673, 778, 2452, 924, 1700, 710,
+      ];
+      var threshold = 1500; // Set your threshold value here
+
+      // Create the chart
+      Highcharts.chart("myChart", {
+        chart: {
+          type: "line",
+        },
+        title: {
+          text: "Total Unfunded Liabilities and Funded Ratio for State & Local Pension Plans 2001-2023",
+        },
+        xAxis: {
+          categories: categories,
+        },
+        yAxis: {
+          title: {
+            text: "Unfunded Liabilities",
+          },
+        },
+        plotOptions: {
+          line: {
+            dataLabels: {
+              enabled: true,
+              formatter: function () {
+                if (this.y > threshold) {
+                  return this.y + "<br><b>Threshold Exceeded</b>"; // Custom text for points above the threshold
+                } else {
+                  return null; // Display nothing for points below the threshold
+                }
+              },
+            },
+          },
+        },
+        series: [
+          {
+            name: "UnfundedS Liabilities",
+            data: data,
+          },
+        ],
+      });
+    </script>
+  </body>
+</html>

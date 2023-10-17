@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chart.js Tooltip Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+  </head>
+  <body>
+    <div style="width: 80%; margin: auto">
+      <canvas id="myChart"></canvas>
+    </div>
+    <script>
+      // Your data
+      var labels = ["Label 1", "Label 2", "Label 3", "Label 4", "Label 5"];
+      var data = [20, 35, 10, 45, 30];
+
+      // Create the chart
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "Data",
+              data: data,
+              backgroundColor: ["red", "blue", "green", "orange", "purple"],
+            },
+          ],
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: true,
+              position: "top",
+            },
+            tooltip: {
+              enabled: true,
+              mode: "index", // Display tooltips for each data point
+              intersect: false, // Don't intersect tooltips
+              backgroundColor: "rgba(0, 0, 0, 0.8)", // Tooltip background color
+              titleFontColor: "white", // Title font color
+              bodyFontColor: "white", // Body font color
+              borderColor: "white", // Border color
+              borderWidth: 1, // Border width
+              callbacks: {
+                // Customize the tooltip label
+                label: function (tooltipItem) {
+                  return "Value: " + tooltipItem.formattedValue;
+                },
+              },
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "Y-Axis Label",
+                fontSize: 14,
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

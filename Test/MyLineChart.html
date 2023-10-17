@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Line Chart</title>
+    <style>
+      .css-chart {
+        border-bottom: 1px solid;
+        border-left: 1px solid;
+        display: inline-block;
+        /* height: var(--widget-size); */
+        margin: 5em 15em 1em 5em;
+        padding: 0;
+        position: relative;
+        /* width: var(--widget-size); */
+      }
+
+      .line-chart {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .data-point {
+        background-color: white;
+        border: 2px solid lightblue;
+        border-radius: 50%;
+        bottom: calc(var(--y) - 8px);
+        height: 12px;
+        left: calc(var(--x) - 8px);
+        position: absolute;
+        width: 12px;
+        z-index: 1;
+      }
+
+      .line-segment {
+        background-color: blue;
+        bottom: var(--y);
+        height: 3px;
+        left: var(--x);
+        position: absolute;
+        transform: rotate(calc(var(--angle) * 1deg));
+        transform-origin: left bottom;
+        width: calc(var(--hypotenuse) * 1px);
+      }
+      #value {
+        position: absolute;
+        left: 85px;
+        top: 280px;
+      }
+      .arrow {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #007bff;
+      }
+      .arrowDiv {
+        position: absolute;
+      }
+    </style>
+  </head>
+
+  <body>
+    <figure class="css-chart">
+      <ul id="line-chart" class="line-chart"></ul>
+    </figure>
+
+    <script>
+      const chartValues = [
+        { value: 25 },
+        { value: 60 },
+        { value: 45 },
+        { value: 50 },
+        { value: 4 },
+      ];
+
+      function formatLineChartData(values, chartHeight) {
+        const widgetSize = chartHeight;
+        const pointSize = 45;
+
+        const base = (widgetSize - pointSize / 2 + 500) / values.length;
+
+        let sortedValues = sortValues([...values]);
+        // console.log(sortedValues);
+        const topMostPoint = sortedValues[0].value;
+        let leftOffset = pointSize;
+        let nextPoint = 0;
+        let rise = 0;
+        let cssValues = [];
+
+        for (var i = 0, len = values.length - 1; i < len; i++) {
+          var currentValue = {
+            left: 0,
+            bottom: 0,
+            hypotenuse: 0,
+            angle: 0,
+            value: 0,
+          };
+
+          currentValue.value = values[i].value;
+          currentValue.left = leftOffset;
+          leftOffset += base;
+
+          currentValue.bottom =
+            (widgetSize - pointSize) * (currentValue.value / topMostPoint);
+          nextPoint =
+            (widgetSize - pointSize) * (values[i + 1].value / topMostPoint);
+
+          rise = currentValue.bottom - nextPoint;
+          currentValue.hypotenuse = Math.sqrt(base * base + rise * rise);
+          currentValue.angle = radiansToDegrees(
+            Math.asin(rise / currentValue.hypotenuse)
+          );
+
+          cssValues.push(currentValue);
+        }
+
+        var lastPoint = {
+          left: leftOffset,
+          bottom:
+            (widgetSize - pointSize) *
+            (values[values.length - 1].value / topMostPoint),
+          hypotenuse: 0,
+          angle: 0,
+          value: values[values.length - 1].value,
+        };
+
+        cssValues.push(lastPoint);
+
+        return cssValues;
+      }
+
+      const sortValues = (values) => values.sort((a, b) => b.value - a.value);
+
+      const radiansToDegrees = (rads) => rads * (180 / Math.PI);
+
+      const sum = (total, value) => total + value.value;
+
+      function render(data, container) {
+        data.forEach((item) => {
+          let markup = createListItem(item);
+          let listItem = document.createElement("li");
+          listItem.style.cssText = `--x: ${item.left}px; --y: ${item.bottom}px`;
+
+          listItem.innerHTML = markup;
+          container.appendChild(listItem);
+        });
+      }
+
+      function createListItem(item) {
+        return `
+        <div class="arrowDiv" style=" position: absolute;left:${
+          item.left - 14
+        }px; bottom:${item.bottom + 5}px;">
+      <span>${item.value}</span><br />
+      <span>Thresold Value</span>
+      <div class="arrow"></div>
+    </div>
+          <div class="data-point" data-value="${item.value}"></div>
+          <div class="line-segment" style="--hypotenuse: ${
+            item.hypotenuse
+          }; --angle:${item.angle};"></div>
+          `;
+      }
+
+      render(
+        formatLineChartData(chartValues, 16 * chartValues.length * 2.5),
+        document.getElementById("line-chart")
+      );
+      document.querySelector(".css-chart").style.height =
+        16 * chartValues.length * 2.5 + "px";
+      document.querySelector(".css-chart").style.width =
+        225 * chartValues.length * 2.5 + "px";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Line Chart</title>
+    <style>
+      canvas {
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="chartCanvas" width="600" height="400"></canvas>
+    <script>
+      const canvas = document.getElementById("chartCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // Chart data
+      const data = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+        datasets: [
+          {
+            label: "Dataset 1",
+            data: [10, 20, 15, 25, 30],
+            color: "blue",
+            lineStyle: "solid", // 'solid', 'dashed', 'dotted'
+            lineWidth: 2,
+          },
+          {
+            label: "Dataset 2",
+            data: [5, 15, 10, 20, 25],
+            color: "red",
+            lineStyle: "dashed",
+            lineWidth: 2,
+          },
+        ],
+      };
+
+      // Chart settings
+      const chartSettings = {
+        marginTop: 20,
+        marginRight: 20,
+        marginBottom: 40,
+        marginLeft: 60,
+        xAxisLabel: "Months",
+        yAxisLabel: "Values",
+      };
+
+      // Function to draw the chart
+      function drawChart() {
+        const { labels, datasets } = data;
+        const {
+          marginTop,
+          marginRight,
+          marginBottom,
+          marginLeft,
+          xAxisLabel,
+          yAxisLabel,
+        } = chartSettings;
+
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Calculate chart dimensions
+        const chartWidth = canvas.width - marginLeft - marginRight;
+        const chartHeight = canvas.height - marginTop - marginBottom;
+
+        // Calculate maximum data values
+        const maxDataValue = Math.max(
+          ...datasets.map((dataset) => Math.max(...dataset.data))
+        );
+
+        // Calculate y-axis scaling factor
+        const scaleY = chartHeight / maxDataValue;
+
+        // Draw x-axis
+        ctx.beginPath();
+        ctx.moveTo(marginLeft, canvas.height - marginBottom);
+        ctx.lineTo(canvas.width - marginRight, canvas.height - marginBottom);
+        ctx.stroke();
+
+        // Draw y-axis
+        ctx.beginPath();
+        ctx.moveTo(marginLeft, marginTop);
+        ctx.lineTo(marginLeft, canvas.height - marginBottom);
+        ctx.stroke();
+
+        // Draw y-axis label
+        ctx.fillStyle = "black";
+        ctx.fillText(yAxisLabel, marginLeft - 30, marginTop - 10);
+
+        // Draw x-axis label
+        ctx.fillText(
+          xAxisLabel,
+          canvas.width - marginRight + 10,
+          canvas.height - marginBottom + 30
+        );
+
+        // Draw data lines
+        datasets.forEach((dataset, index) => {
+          ctx.beginPath();
+          ctx.strokeStyle = dataset.color;
+          ctx.lineWidth = dataset.lineWidth;
+
+          const stepX = chartWidth / (labels.length - 1);
+
+          labels.forEach((label, i) => {
+            const x = marginLeft + stepX * i;
+            const y = canvas.height - marginBottom - dataset.data[i] * scaleY;
+
+            if (i === 0) {
+              ctx.moveTo(x, y);
+            } else {
+              ctx.lineTo(x, y);
+            }
+          });
+
+          ctx.stroke();
+
+          // Draw dataset label
+          ctx.fillStyle = dataset.color;
+          ctx.fillText(
+            dataset.label,
+            marginLeft + 10,
+            marginTop + 20 + index * 20
+          );
+        });
+      }
+
+      // Initial draw
+      drawChart();
+    </script>
+  </body>
+</html>
