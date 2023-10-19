@@ -1,0 +1,398 @@
+﻿
+@{
+    ViewBag.Title = "NPTControl";
+}
+<head>
+
+
+    <style type="text/css">
+        .xcointainer {
+            height: 91%;
+            width: 86%;
+            position: fixed;
+            /*z-index: 1;*/
+            top: 70px;
+            left: 13%;
+            border-radius: 10px;
+            /*background-color: white;*/
+            overflow-x: hidden;
+            /*background-image: url('../../image/intersection.png');*/
+            /*display:flex;*/
+            /*background-image: url('../../image/backgroundimage2.jpg');*/
+        }
+
+        .xtopcontainer {
+            /*display: flex;*/
+            /*border: 2px rebeccapurple solid;*/
+            width: 99%;
+        }
+
+        .xhead {
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            background-color: #304ffc;
+            color: white;
+            border-radius: 7px;
+            padding: 2px 3px 13px 33px;
+            margin: 1% 1% 1% 1%;
+            height: 20px;
+            text-align: center;
+        }
+
+        .xBtnSet {
+            width: 40%;
+            height: 115px;
+            border-radius: 7px;
+            background-color: white;
+            display: flex;
+        }
+
+        .xbtn {
+            width: 10%;
+            height: 100px;
+            position: relative;
+            margin: 1%;
+            margin-left: 2.7%;
+            /* border: 2px rebeccapurple solid;*/
+        }
+
+            .xbtn .xibtn {
+                text-decoration: none;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 12px;
+                color: white;
+                background-color: #1778b7;
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 7px;
+                /*ox-shadow: 0 5px 16px 0 #066816cf, 0 6px 20px 0 #304ffc26;*/
+                position: absolute;
+                text-align: inherit;
+                /*border: 2px rebeccapurple solid*/
+            }
+
+            .xbtn .px {
+                text-decoration: none;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 30px;
+                z-index: 1;
+                position: absolute;
+                left: 65%;
+                color: white;
+                /*border: 2px rebeccapurple solid;*/
+                font-weight: bolder;
+                top: 30%;
+            }
+
+            .xbtn .py {
+                text-decoration: none;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 19px;
+                z-index: 1;
+                position: absolute;
+                left: 7%;
+                color: white;
+                /*border: 2px rebeccapurple solid;*/
+                font-weight: bolder;
+                top: -15%;
+            }
+
+            .xbtn .pz {
+                text-decoration: none;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 22px;
+                z-index: 1;
+                width: 52%;
+                position: absolute;
+                left: 5%;
+                background: #00ffff00;
+                color: white;
+                border: 2px #66339900 solid;
+                font-weight: bolder;
+                top: 64%;
+            }
+
+            .xbtn:hover {
+                background-color: #b29eef57;
+                color: #1d097a;
+                font-weight: bold;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            }
+
+        /*.xdt {
+            margin-top: 25px;*/
+
+        .xset {
+            width: 28%;
+            height: 115px;
+            border-radius: 7px;
+            background-color: white;
+            margin-left: 0.5%;
+            display: flex;
+        }
+
+        .zset {
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: white;
+            background-color: #1778b7;
+            width: 96%;
+            /*            height: 96%;*/
+            border: none;
+            border-radius: 7px;
+            margin: 1% 1% 1% 1%;
+            padding: 1%;
+            font-weight: bold;
+            /*ox-shadow: 0 5px 16px 0 #066816cf, 0 6px 20px 0 #304ffc26;*/
+        }
+
+        .xB1T {
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-radius: 7px;
+            font-size: 18px;
+        }
+
+        .xsetbtn {
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: rebeccapurple;
+            margin-left: 15px;
+            margin-right: 15px;
+            width: 50px;
+            height: 27px;
+            border: 2px rebeccapurple solid;
+            border-radius: 5px;
+            box-shadow: 0 5px 16px 0 #363cd473, 0 6px 20px 0 #304ffc26;
+        }
+
+        .xset2 {
+            width: 32%;
+            height: 115px;
+            border-radius: 7px;
+            background-color: white;
+            margin-left: 0.5%;
+            display: flex;
+        }
+
+        .zset2 {
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            color: white;
+            background-color: #1778b7;
+            width: 96%;
+            /*            height: 96%;*/
+            border: none;
+            border-radius: 7px;
+            margin: 1% 1% 1% 1%;
+            padding: 3%;
+            font-weight: bold;
+            /*ox-shadow: 0 5px 16px 0 #066816cf, 0 6px 20px 0 #304ffc26;*/
+        }
+
+        .Out_num {
+            width: 60PX;
+            height: 25px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin: 1%;
+        }
+
+        .table-container1 {
+            width: 94.5%;
+            height: 569px;
+            /*margin: auto;*/
+            /* margin-left: 22%; */
+            margin-left: 39px;
+            margin-top: 1%;
+            padding: 0px;
+            /* overflow-y: auto;*/
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .justify-content-between {
+            justify-content: space-between;
+        }
+
+        .hading {
+            font-size: 20px;
+            text-align: center;
+            color: #f1f1f1;
+            margin-bottom: 40px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+           
+
+            .table thead {
+                background-color: #10121c;
+                border: 2.5px solid #066816cf;
+            }
+
+                .table thead tr th {
+                    font-size: 13px;
+                    color: #ffffff;
+                    border: 1.5px solid #6ec91c85;
+                }
+
+            .table tbody tr td {
+                font-size: 14px;
+                letter-spacing: 0.35px;
+                font-weight: normal;
+                color: #000000;
+                background-color: #cfedd2d6;
+                padding: 4px;
+                text-align: center;
+                border: 1.5px solid #066816cf;
+            }
+
+            .table .text_open {
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 0.35px;
+                color: #FF1046;
+            }
+
+            .table table tr td .btn {
+                width: 130px;
+                text-decoration: none;
+                line-height: 35px;
+                display: inline-block;
+                background-color: #ff1046;
+                font-weight: medium;
+                color: #ffffff;
+                text-align: center;
+                vertical-align: middle;
+                user-select: none;
+                border: 1px solid transparent;
+                font-size: 14px;
+                opacity: 1;
+            }
+
+        .col-sm-12,
+        .col-md-12,
+        .col-lg-12 {
+            position: relative;
+            min-height: 26px;
+            padding-right: 10%;
+            padding-left: 1%;
+        }
+
+        .col-md-5, col-md-7 {
+            float: left;
+        }
+
+     
+        .highcharts-figure2{
+            /*width:94%;*/
+        }
+
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #ebebeb;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table td,
+        .highcharts-data-table th,
+        .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table thead tr,
+        .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+    </style>
+    <script src="~/ofline/hichart.js"></script>
+    <script src="~/ofline/code_highcharts_com_modules_data.js"></script>
+    <script src="~/ofline/_com_modules_drilldown.js"></script>
+    <script src="~/ofline/https_code_highcharts_com_modules_variable-pie.js"></script>
+    <script src="~/ofline/https-code-highcharts-com-modules-exporting.js"></script>
+    <script src="~/ofline/https-code-highcharts-com-modules-export-data.js"></script>
+    @* <script src="~/ofline/https-code-highcharts-com-modules-accessibility.js"></script>*@
+
+
+
+    <script src="~/Scripts/Graphs/NPT.js"></script>
+
+    <link href="~/Content/datatables_min.css" rel="stylesheet" />
+    <script src="~/Scripts/DataTible/jquery_3_7_0_js.js"></script>
+    <script src="~/Scripts/DataTible/datatables_net-1_13_6-js-jquery_dataTables_min_js.js"></script>
+    <script src="~/Scripts/DataTible/buttons-2_4_1-js-dataTables_buttons_min_js.js"></script>
+    <script src="~/Scripts/DataTible/ajax-libs-jszip-3_10_1-jszip_min_js.js"></script>
+    <script src="~/Scripts/DataTible/libs_pdfmake_0-1-53_pdfmake_min_js.js"></script>
+    <script src="~/Scripts/DataTible/ajax_libs_pdfmake_0-1-53_vfs_fonts_js.js"></script>
+    <script src="~/Scripts/DataTible/buttons-2_4_1-js-buttons_html5_min_js.js"></script>
+    <script src="~/Scripts/DataTible/buttons-2-4-1_js_buttons_print_min_js.js"></script>
+
+</head>
+<body>
+    <div class="xcointainer">
+        @*<div class="xhead">Daynamic Scheduling </div>*@
+        <div class="xtopcontainer">
+            @*<div class="xBtnSet">*@
+            @*<div class="xbtn" id="xbtn1">
+                <p class="py">Actual NPT</p>
+                <input type="text" class="xibtn" readonly />
+                <input type="text" id="ActualNPT" class="pz" readonly />
+
+            </div>*@
+
+
+
+            @*Graph*@
+            <div class="xtopsub2">
+                <figure class="highcharts-figure2">
+                    <div id="container"></div>
+                </figure>
+            </div>
+        </div>
+
+
+        <div class="xdt" id="ViewNPTTable">
+            <div class="table-container1">
+                <table class="table align-items-center justify-content-between" id="NptViewTable">
+                    <thead>                      
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</body>

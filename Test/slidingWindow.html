@@ -89,13 +89,27 @@
         animation-duration: 20s;
         animation-iteration-count: infinite; */
         /* animation-direction: alternate; */
-        animation: example 10s linear infinite;
+        animation: example 30s linear infinite;
+      }
+      input[type="radio"] {
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        border: 2px solid #212426;
+        border-radius: 50%;
+        background-color: #3498db;
+        animation: radioanimation 2s linear infinite;
+      }
+      input[type="radio"]:checked {
+        background-color: forestgreen;
       }
     </style>
     <style id="keyframesStyle">
       @keyframes example {
         0% {
           margin-top: 0px;
+          @keyframes example {
+          }
         }
         20% {
           margin-top: 0px;
@@ -264,6 +278,16 @@
           </div>
         </div>
         <div class="slide_content_4">
+          <style>
+            #radio4 {
+              appearance: none;
+              width: 15px;
+              height: 15px;
+              border: 2px solid #212426;
+              border-radius: 50%;
+              background-color: #68cc92;
+            }
+          </style>
           <div class="ycontainer3">
             <div class="xcontainer14">
               <div class="xcontainer141">Heating Status of Ovens</div>
@@ -533,3 +557,66 @@
     </script>
   </body>
 </html>
+
+<!-- @@keyframes example {
+        0% {
+          margin-top: 0px;
+        }
+        5% {
+          margin-top: 0px;
+        }
+        10% {
+          margin-top: -48%;
+        }
+        15% {
+            margin-top: -48%;
+        }
+        20% {
+          margin-top: -96%;
+        }
+        25% {
+            margin-top: -96%;
+        }
+        30% {
+          margin-top: -144%;
+        }
+        35% {
+          margin-top: -144%;
+        }
+        40% {
+            margin-top: -192%;
+        }
+        45% {
+            margin-top: -192%;
+        }
+        50% {
+            margin-top: -240%;
+        }
+        55% {
+            margin-top: -240%;
+        }
+        60% {
+            margin-top: -288%;
+        }
+        65% {
+            margin-top: -288%;
+        }
+        70% {
+            margin-top: -336%;
+        }
+        75% {
+            margin-top: -336%;
+        }
+        80% {
+            margin-top: -384%;
+        }
+        85% {
+            margin-top: -384%;
+        }
+        90% {
+            margin-top: 0px;
+        }
+        0% {
+          margin-top: 0px;
+        }
+      } -->

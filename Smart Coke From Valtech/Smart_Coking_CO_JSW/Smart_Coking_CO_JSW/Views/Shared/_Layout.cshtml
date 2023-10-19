@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Smart Coking</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/Scripts/js")
+
+
+    <link href="~/Content/all.min.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome.min.css" rel="stylesheet" />
+    <style>
+        body {
+            /*background-color: #847f8b4f;*/
+            background-color: white;
+        }
+        /* Fixed sidenav, full height */
+        .tab-container {
+            margin-left: 3%;
+            margin-right: 3%;
+            margin-top: 5px;
+            padding-left: 10px;
+            display: flex;
+            height: 30px;
+            padding: 5px;
+        }
+
+        .navmain {
+            height: 98%;
+            width: 87%;
+            position: fixed;
+            /* z-index: 1;*/
+            top: 1%;
+            left: 12.5%;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            background-color: #cfcdd7f0;
+            overflow-x: hidden;
+            border: 2px solid #110534f0;
+        }
+
+        .topnav {
+            height: 50px;
+            width: 87%;
+            position: fixed;
+            z-index: 1;
+            top: 1%;
+            left: 12.5%;
+            /*border-radius: 10px;*/
+            border-top-right-radius: 15px;
+            /* border-bottom-right-radius: 15px;*/
+            background-color: white;
+            overflow-x: hidden;
+            border: 2px solid #110534f0;
+        }
+
+            .topnav p {
+                padding-left: 25px;
+                color: #110534f0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 17px;
+                font-weight: bold;
+                width: 50%;
+                float: left;
+            }
+
+            .topnav img {
+                padding: 2px 4px 0 10px;
+                height: 5%;
+                width: 5%;
+                float: right;
+                margin-right: 2%;
+                /*border: 2px solid #110534f0;*/
+            }
+
+        .sidenav {
+            height: 98%;
+            width: 12%;
+            position: fixed;
+            z-index: 1;
+            top: 1%;
+            left: 5px;
+            /*border-radius: 10px;*/
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            background-color: #110534f0;
+            overflow-x: hidden;
+            border: 2px solid #110534f0;
+            /*border: 2px solid #345a87;*/
+            /* background-image: url('../../image/backgroundimage2.jpg');*/
+        }
+
+        .navsec {
+            padding: 7%;
+            color: #e9edff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .sidenavlogo {
+            height: 7%;
+            width: 10.3%;
+            position: fixed;
+            z-index: 1;
+            top: 90%;
+            margin-left: 0.7%;
+            border-radius: 7px;
+            border: 2px solid white;
+            background-color: white;
+        }
+
+            .sidenavlogo img {
+                width: 45%;
+                margin-left: 5%;
+                margin-top: 1%;
+                overflow: hidden;
+            }
+
+        .navhead {
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            background-color: white;
+            color: #2c2542;
+            border-radius: 7px;
+            padding: 10px 6px 9px 30px;
+            margin: 10% 5% 5% 5%;
+            height: 30px;
+            font-weight: 800;
+            /* border: 2px solid white;*/
+        }
+
+
+        .sidenav a {
+            width: 120px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 17px;
+            margin: 2px;
+            overflow: hidden;
+            color: #8793cb;
+            font-weight: bold;
+            /* border: 1px solid red;*/
+        }
+
+
+        .icon {
+            width: 30px;
+            height: 20px;
+            text-align: center;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-top: 3px;
+            /*border:1px solid red;*/
+        }
+
+            .icon .fa-solid {
+                line-height: 20px;
+                font-size: 17px;
+                color: #8793cb;
+                transition: 0.5s;
+            }
+
+
+                .icon .fa-solid:last-child {
+                    color: white;
+                }
+
+
+        /* On mouse-over */
+        .tab-container:hover {
+            border-radius: 7px;
+            background-color: #b29eef57;
+        }
+
+            .tab-container:hover a {
+                font-weight: bold;
+                color: white;
+            }
+
+            .tab-container:hover .icon .fa-solid {
+                transform: translateY(-100%);
+            }
+    </style>
+</head>
+<body>
+
+    <div class="navmain">
+        <div class="topnav">
+            <div>
+                <p>Overview</p>
+                <img src="~/image/js833j63f-jsw-logo-jsw-logo-download-vector (2).png" />
+            </div>
+        </div>
+    </div>
+    <div class="sidenav">
+
+        <div class="navhead">Smart Coking </div>
+
+        @* General *@
+        <div class="navsec">General</div>
+        <div class="tab-container" id="idDashboard">
+            <div class="icon">
+                <i class="fa-solid fa-table-columns" aria-hidden="true"></i>
+                <i class="fa-solid fa-table-columns" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("Dashboard", "Dashboard", "General")
+        </div>
+        <div class="tab-container" id="idPerformance">
+            <div class="icon">
+                <i class="fa-solid fa-pie-chart" aria-hidden="true"></i>
+                <i class="fa-solid fa-pie-chart" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("Performance", "Index", "Home")
+        </div>
+        @* Heting Control *@
+        <div class="navsec">Heating Control</div>
+        <div class="tab-container" id="idScheduling">
+            <div class="icon">
+                <i class="fa-solid fa-share-from-square" aria-hidden="true"></i>
+                <i class="fa-solid fa-share-from-square" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("Scheduling", "Schedhuling", "HetingControl")
+        </div>
+        <div class="tab-container" id="idNPT">
+            <div class="icon">
+                <i class="fa-solid fa-circle-right" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-right" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("NPT Control", "NPTControl", "NPTControl")
+        </div>
+        <div class="tab-container" id="idRatio">
+            <div class="icon">
+                <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+                <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("Ratio Control", "Index", "Schedhuling")
+        </div>
+        @*Graphs *@
+        <div class="navsec">Analysis</div>
+        <div class="tab-container" id="idTrend">
+            <div class="icon">
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("Trends", "Trends", "Analysis")
+        </div>
+        <div class="tab-container" id="idGraphs">
+            <div class="icon">
+                <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+                <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("Bar Graphs", "Graphs", "Analysis")
+        </div>
+        <div class="tab-container" id="idAlerts">
+            <div class="icon">
+                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("Alerts", "Alerts", "Analysis")
+        </div>
+
+        @*Production *@
+        <!--<div class="navsec">Reports</div>-->
+        <div class="tab-container" id="idProduction">
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </div>
+            @Html.ActionLink("Reports", "Reporting_View", "Reporting")
+        @*</div>*@
+
+        @*Login *@
+
+        <!--<div class="tab-container" id="idProduction">
+        <div class="icon">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </div>
+        @Html.ActionLink("Login", "Index", "Home")
+        </div>-->
+
+    </div>
+    <div class="sidenavlogo">
+
+        <a><img src="~/image/Valtech_logo.png" /></a>
+    </div>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                //this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+    <div class="container body-content">
+        @RenderBody()
+        @*<hr />*@
+        <footer>
+            @*<p>
+                    &copy; @DateTime.Now.Year - Valtech Automation Pvt. Ltd.
+                </p>*@
+            <!--<img style="margin-left:0%;" src="~/image/lvtect.png" />-->
+
+
+        </footer>
+    </div>
+</body>
+</html>
+

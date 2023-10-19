@@ -1,0 +1,73 @@
+﻿.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+#Limistion_Date {
+    font-size: 15px;
+    color: #0030ff;
+}
+.popup-content {
+    background-color: #fff;
+    width: 26%;
+    height: 27%;
+    margin: 62px auto;
+    display: flex;
+    padding: 22px;
+    border: 1px solid #333;
+    position: relative;
+    z-index: 1px;
+    /* flex-direction: column; */
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#validationMessage {
+    color: red;
+    font-family: math;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#countdown {
+    font-weight: bold;
+    color: red;
+    font-size: 18px;
+}
+.comment {
+    width: 40%;
+    height: 100px;
+    padding: 10px;
+    background-color: #d0e2bc;
+    font-size:16px;
+   color:#0f046d;
+}
+.popupDateTime {
+    font-size: 150%;
+    background-color: #5fa8a3;
+    color: white;
+}
+.PopupComment {
+    font-size: 150%;
+    background-color: #5fa8a3;
+    color: white;
+}
+.popupUpdatebutton {
+    font-size: 17px;
+    background: aquamarine;
+}
+.popupUpdatebutton:hover{
+    color:#ffffff;
+    background-color:green;
+}
