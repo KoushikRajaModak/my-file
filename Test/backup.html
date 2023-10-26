@@ -916,190 +916,144 @@
             box-shadow: 5px 10px 18px #10164a;
             overflow: hidden;
         }
-        .slide_content_1 {
-            animation: example 30s linear infinite;
-            
-        }
-        .highcharts-root{
-            height:315px;
-        }
-        .radio_Div {
-            position: absolute;
-            left: 56.5%;
-            bottom: 22%;
-            transform: rotate(90deg);
-            height: 0%;
-        }
-        input[type="radio"] {
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border: 2px solid #212426;
-            border-radius: 50%;
-            background-color: #aab7aa52;
-            margin: 0px;
-        }
-            input[type="radio"]:checked {
-                background-color: #0df70d;
-            }
-        .hoverButton {
-            height: 10px;
-            background-color: #0df70d;
-            width: 10px;
-            border-radius: 50%;
-            position: absolute;
-            bottom: 33.3%;
-            z-index: 1;
-            left: 56.3%;
-            animation: radioanimation 30s linear infinite;
-        }
+        .slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 2s;
+  }
+  
+  .slide img{
+    width: 800px;
+    height: 500px;
+  }
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .manual-btn{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+  }
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background: #40D3DC;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+    margin-left: -60%;
+  }
+  #radio5:checked ~ .first{
+    margin-left: -80%;
+  }
+  #radio6:checked ~ .first{
+    margin-left: -100%;
+  }
+  #radio7:checked ~ .first{
+    margin-left: -120%;
+  }
+  #radio8:checked ~ .first{
+    margin-left: -140%;
+  }
+  #radio9:checked ~ .first{
+    margin-left: -160%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+  .navigation-auto div{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+  }
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #40D3DC;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #40D3DC;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #40D3DC;
+  }
+  
+  #radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #40D3DC;
+  }
+  #radio5:checked ~ .navigation-auto .auto-btn5{
+    background: #40D3DC;
+  }
+  #radio6:checked ~ .navigation-auto .auto-btn6{
+    background: #40D3DC;
+  }
+  #radio7:checked ~ .navigation-auto .auto-btn7{
+    background: #40D3DC;
+  }
+  #radio8:checked ~ .navigation-auto .auto-btn8{
+    background: #40D3DC;
+  }
+  #radio9:checked ~ .navigation-auto .auto-btn9{
+    background: #40D3DC;
+  }
+        </style>
             /*/ Temputure scale end /*/
-    </style>
-    <style id="keyframesStyle">
-        @@keyframes example {
-            0% {
-                margin-top: 0%;
-            }
-        5% {
-          margin-top: 0%;
-        }
-        10% {
-          margin-top: -48%;
-        }
-        15% {
-            margin-top: -48%;
-        }
-        20% {
-          margin-top: -96%;
-        }
-        25% {
-            margin-top: -96%;
-        }
-        30% {
-          margin-top: -144%;
-        }
-        35% {
-          margin-top: -144%;
-        }
-        40% {
-            margin-top: -192%;
-        }
-        45% {
-            margin-top: -192%;
-        }
-        50% {
-            margin-top: -240%;
-        }
-        55% {
-            margin-top: -240%;
-        }
-        60% {
-            margin-top: -288%;
-        }
-        65% {
-            margin-top: -288%;
-        }
-        70% {
-            margin-top: -336%;
-        }
-        75% {
-            margin-top: -336%;
-        }
-        80% {
-            margin-top: -384%;
-        }
-        85% {
-            margin-top: -384%;
-        }
-        90% {
-            margin-top: 0px;
-        }
-        100% {
-          margin-top: 0px;
-        }
-      }
-        @@keyframes radioanimation {
-            0% {
-                bottom: 33.3%;
-            }
-
-            9.99% {
-                bottom: 33.3%;
-            }
-
-            10% {
-                bottom: 30.8%;
-            }
-
-            19.99% {
-                bottom: 30.8%;
-            }
-
-            20% {
-                bottom: 28.2%;
-            }
-
-            29.99% {
-                bottom: 28.2%;
-            }
-
-            30% {
-                bottom: 25.6%;
-            }
-
-            39.99% {
-                bottom: 25.6%;
-            }
-
-            40% {
-                bottom: 23%;
-            }
-
-            49.99% {
-                bottom: 23%;
-            }
-
-            50% {
-                bottom: 20.5%;
-            }
-
-            59.99% {
-                bottom: 20.5%;
-            }
-
-            60% {
-                bottom: 18%;
-            }
-
-            69.99% {
-                bottom: 18%;
-            }
-
-            70% {
-                bottom: 15.5%;
-            }
-
-            79.99% {
-                bottom: 15.5%;
-            }
-
-            80% {
-                bottom: 12.7%;
-            }
-
-            89.99% {
-                bottom: 12.7%;
-            }
-
-            90% {
-                bottom: 33.3%;
-            }
-
-            100% {
-                bottom: 33.3%;
-            }
-        } 
-    </style>
+   
     <script src="~/Scripts/General/Dashboard.js"></script>
 
 
@@ -1341,113 +1295,123 @@
 
             <div class="xcontainer14">
 
-                <div class="xcontainer142  slide_content_1">
-                   <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus1"></div>
-                    </figure>
-                </div>
-                <div class="xcontainer142  slide_content_2">
-
-                    <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus2"></div>
-                    </figure>
-                </div>
-                <div class="xcontainer142  slide_content_3">
-
-                    <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus3"></div>
-                    </figure>
-                </div>
-                <div class="xcontainer142  slide_content_4">
-
-                    <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus4"></div>
-                    </figure>
-                </div>
-                <div class="xcontainer142  slide_content_5">
-
-                    <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus5"></div>
-                    </figure>
-                </div>
-                <div class="xcontainer142  slide_content_6">
-
-                    <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus6"></div>
-                    </figure>
-                </div>
-                <div class="xcontainer142  slide_content_7">
-
-                    <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus7"></div>
-                    </figure>
-                </div>
-                <div class="xcontainer142  slide_content_8">
-
-                    <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus8"></div>
-                    </figure>
-                </div>
-                <div class="xcontainer142  slide_content_9">
-
-                    <figure class="highcharts-figure5">
-                        <div id="containerOvenStatus9"></div>
-                    </figure>
-                </div>
-                <div class="hoverButton">
+                <div class="slider">
+                    <div class="slides">
+                      <!--radio buttons start-->
+                      <input type="radio" name="radio-btn" id="radio1">
+                      <input type="radio" name="radio-btn" id="radio2">
+                      <input type="radio" name="radio-btn" id="radio3">
+                      <input type="radio" name="radio-btn" id="radio4">
+                      <input type="radio" name="radio-btn" id="radio5">
+                      <input type="radio" name="radio-btn" id="radio6">
+                      <input type="radio" name="radio-btn" id="radio7">
+                      <input type="radio" name="radio-btn" id="radio8">
+                      <input type="radio" name="radio-btn" id="radio9">
+                      <!--radio buttons end-->
+                      <!--slide images start-->
+                      <div class="slide first">
+                          <div class="xcontainer142">
+                              <figure class="highcharts-figure5">
+                                   <div id="containerOvenStatus1"></div>
+                               </figure>
+                           </div>
+                      </div>
+                      <div class="slide">
+                          <div class="xcontainer142">
+              
+                              <figure class="highcharts-figure5">
+                                  <div id="containerOvenStatus2"></div>
+                              </figure>
+                          </div>
+                      </div>
+                      <div class="slide">
+                          <div class="xcontainer142">
+              
+                              <figure class="highcharts-figure5">
+                                  <div id="containerOvenStatus3"></div>
+                              </figure>
+                          </div>
+                      </div>
+                      <div class="slide">
+                          <div class="xcontainer142">
+              
+                              <figure class="highcharts-figure5">
+                                  <div id="containerOvenStatus4"></div>
+                              </figure>
+                          </div>
+                      </div>
+                      <div class="slide">
+                          <div class="xcontainer142">
+              
+                              <figure class="highcharts-figure5">
+                                  <div id="containerOvenStatus5"></div>
+                              </figure>
+                          </div>
+                      </div>
+                      <div class="slide">
+                          <div class="xcontainer142">
+              
+                              <figure class="highcharts-figure5">
+                                  <div id="containerOvenStatus6"></div>
+                              </figure>
+                          </div>
+                      </div>
+                      <div class="slide">
+                          <div class="xcontainer142">
+              
+                              <figure class="highcharts-figure5">
+                                  <div id="containerOvenStatus7"></div>
+                              </figure>
+                          </div>
+                      </div>
+                      <div class="slide">
+                          <div class="xcontainer142">
+              
+                              <figure class="highcharts-figure5">
+                                  <div id="containerOvenStatus8"></div>
+                              </figure>
+                          </div>
+                      </div>
+                      <div class="slide">
+                          <div class="xcontainer142">
+              
+                              <figure class="highcharts-figure5">
+                                  <div id="containerOvenStatus9"></div>
+                              </figure>
+                          </div>
+                      </div>
+                      <!--slide images end-->
+                      <!--automatic navigation start-->
+                      <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                        <div class="auto-btn5"></div>
+                        <div class="auto-btn6"></div>
+                        <div class="auto-btn7"></div>
+                        <div class="auto-btn8"></div>
+                        <div class="auto-btn9"></div>
+                      </div>
+                      <!--automatic navigation end-->
+                    </div>
+                    <!--manual navigation start-->
+                    <div class="navigation-manual">
+                      <label for="radio1" class="manual-btn"></label>
+                      <label for="radio2" class="manual-btn"></label>
+                      <label for="radio3" class="manual-btn"></label>
+                      <label for="radio4" class="manual-btn"></label>
+                      <label for="radio5" class="manual-btn"></label>
+                      <label for="radio6" class="manual-btn"></label>
+                      <label for="radio7" class="manual-btn"></label>
+                      <label for="radio8" class="manual-btn"></label>
+                      <label for="radio9" class="manual-btn"></label>
+                    </div>
+                    <!--manual navigation end-->
+                  </div>
+                  <!--image slider end-->
             </div>
-                <div class="radio_Div" style="position:fixed;">
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio1"
-                           value="1"
-                           name="myRadioGroup" />
-
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio2"
-                           value="2"
-                           name="myRadioGroup" />
-
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio3"
-                           value="3"
-                           name="myRadioGroup" />
-
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio4"
-                           value="4"
-                           name="myRadioGroup" />
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio5"
-                           value="5"
-                           name="myRadioGroup" />
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio6"
-                           value="6"
-                           name="myRadioGroup" />
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio7"
-                           value="7"
-                           name="myRadioGroup" />
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio8"
-                           value="8"
-                           name="myRadioGroup" />
-                    <input type="radio"
-                           class="radio_BTN"
-                           id="radio9"
-                           value="9"
-                           name="myRadioGroup" />
-                </div>
-            </div>
-            <script>
+            <!-- <script>
                 const MainTime = 30;
                 let time = MainTime;
                 const radios = document.querySelectorAll('input[type="radio"]');
@@ -2430,7 +2394,7 @@
                         }, 5000);
                     });
                 });
-            </script>
+            </script> -->
 
 
             <script>
