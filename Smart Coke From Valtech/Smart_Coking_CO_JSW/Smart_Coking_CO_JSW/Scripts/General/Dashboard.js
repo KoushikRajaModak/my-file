@@ -408,7 +408,6 @@ CokeGasFlow_Live();
 
 // Secduling
 
-// Rest of the code remains the same...
 var ChargingCar_1, ChargingCar_2, PushgingCar_1, PushgingCar_2;
 // Define an array of colors for each bar
 var colors = ['#0000FF', '#0000FF', '#0000FF', '#0000FF'];
